@@ -21,8 +21,8 @@
 
 1. ابتدا پروژه را کلون کنید:
 ```bash
-git clone https://github.com/your-username/connect4-online.git
-cd connect4-online
+git clone https://github.com/SoHaYbTeImSaH/doz.git
+cd doz
 ```
 
 2. نصب وابستگی‌ها:
