@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی دوز </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>بازی دوز</h1>
+            <div class="game-mode-selector">
+                <button id="vs-ai" class="mode-btn active">بازی با هوش مصنوعی</button>
+                <button id="vs-player" class="mode-btn">بازی با دوست</button>
+            </div>
+        </div>
+        
+        <div class="game-info">
+            <div id="status" class="status">نوبت بازیکن: قرمز</div>
+            <div class="score-board">
+                <div class="score red-score">
+                    <span class="player-name">بازیکن قرمز</span>
+                    <span class="score-value">0</span>
+                </div>
+                <div class="score yellow-score">
+                    <span class="player-name">بازیکن سبز</span>
+                    <span class="score-value">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board-container">
+            <div id="board"></div>
+            <div class="column-numbers">
+                <div class="column-number">1</div>
+                <div class="column-number">2</div>
+                <div class="column-number">3</div>
+                <div class="column-number">4</div>
+                <div class="column-number">5</div>
+                <div class="column-number">6</div>
+                <div class="column-number">7</div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button id="reset" class="control-btn">شروع مجدد</button>
+            <button id="undo" class="control-btn">حرکت قبلی</button>
+        </div>
+
+        <div id="win-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="win-message"></h2>
+                <button id="new-game" class="control-btn">بازی جدید</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

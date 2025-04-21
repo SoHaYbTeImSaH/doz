@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دوز - بازی آنلاین</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>دوز 4 سو</h1>
+            <div class="auth-buttons">
+                <button id="login-btn" class="control-btn">ورود</button>
+                <button id="register-btn" class="control-btn">ثبت نام</button>
+            </div>
+        </div>
+
+        <div class="game-mode-selector">
+            <button id="vs-ai" class="mode-btn active">بازی با کامپیوتر</button>
+            <button id="vs-player" class="mode-btn">بازی آنلاین</button>
+        </div>
+
+        <div class="game-info">
+            <div class="status" id="status">نوبت بازیکن: قرمز</div>
+            <div class="score-board">
+                <div class="score red-score">
+                    <div class="player-name">بازیکن قرمز</div>
+                    <div class="score-value">0</div>
+                </div>
+                <div class="score yellow-score">
+                    <div class="player-name">بازیکن زرد</div>
+                    <div class="score-value">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board-container">
+            <div id="board"></div>
+            <div class="column-numbers">
+                <div class="column-number">1</div>
+                <div class="column-number">2</div>
+                <div class="column-number">3</div>
+                <div class="column-number">4</div>
+                <div class="column-number">5</div>
+                <div class="column-number">6</div>
+                <div class="column-number">7</div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button id="find-game" class="control-btn">یافتن بازی</button>
+            <button id="undo" class="control-btn">بازگشت</button>
+            <button id="reset" class="control-btn">بازی جدید</button>
+        </div>
+    </div>
+
+    <!-- مودال ورود -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>ورود به بازی</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">نام کاربری:</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">رمز عبور:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-btn">ورود</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- مودال ثبت‌نام -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>ثبت‌نام در بازی</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-username">نام کاربری:</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">رمز عبور:</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-btn">ثبت‌نام</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- مودال برنده شدن -->
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <h2></h2>
+            <button id="new-game-btn" class="control-btn">شروع بازی جدید</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
